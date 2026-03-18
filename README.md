@@ -1,8 +1,10 @@
-# **match-eventos**
+# **ArenaMatch**
 Esse é um repositório destinado ao projeto da disciplina de POO sobre o como ocupar de uma forma mais apropriada a Arena Pernambuco
 
 ## **Entrega 1**
 **1. Link para o documento com as histórias de usuários**: https://docs.google.com/document/d/1QykDapqCscHlDRp-8wlWcc3U_XXTSkvYMzxiG4SGfRw/edit?usp=sharing
+
 **2. Protótipo Lo-Fi - Figma**: https://www.figma.com/design/cx0FlN12zN9p5wv0yAzmQ2/Sem-t%C3%ADtulo?node-id=0-1&t=6P3sKVCfqcRNGPC7-1
+
 **3. Screencast - Figma**: https://youtu.be/8yaipRawjug?si=7zgVSwGGkWySCnuw
 
