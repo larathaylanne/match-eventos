@@ -14,10 +14,8 @@ public class UserModel{
     private String email;
     private String senha;
 
-    // Construtor vazio (Obrigatório para o Hibernate)
     public UserModel() {}
 
-    // Getters e Setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 

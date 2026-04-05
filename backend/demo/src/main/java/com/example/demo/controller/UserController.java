@@ -25,4 +25,16 @@ public class UserController {
         UserModel novoUser = userService.cadastrarUsuario(user);
         return new ResponseEntity<>(novoUser, HttpStatus.CREATED);
     }
+
+    @PostMapping("/login")
+    public ResponseEntity<Object> login(@RequestBody UserModel loginData) {
+    UserModel usuario = userService.realizarLogin(loginData.getEmail(), loginData.getSenha());
+
+    if (usuario != null) {
+        return ResponseEntity.ok(usuario);
+    } else {
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("E-mail ou senha incorretos.");
+    }
 }
+}
+
