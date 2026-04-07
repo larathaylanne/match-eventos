@@ -19,3 +19,6 @@ A equipe do projeto é composta pelos seguintes membros:
 
 **3. Screencast - Figma**: https://youtu.be/8yaipRawjug?si=7zgVSwGGkWySCnuw
 
+## **Entrega 2:**
+
+**1. Link video no youtube: https://youtu.be/YPX_ueWrQtw?si=XCeZzEWXudEkIavd
