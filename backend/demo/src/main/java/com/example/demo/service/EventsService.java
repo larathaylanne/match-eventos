@@ -24,4 +24,9 @@ public class EventsService {
         }
         return eventsRepository.save(evento);
     }
+
+    public EventsModel buscarPorId(Long id){
+        return eventsRepository.findById(id).orElse(null);
+    }
+    
 }

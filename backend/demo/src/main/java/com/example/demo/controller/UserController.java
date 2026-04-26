@@ -1,5 +1,8 @@
 package com.example.demo.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -28,9 +31,14 @@ public class UserController {
 
     @PostMapping("/login")
     public ResponseEntity<Object> login(@RequestBody UserModel loginData) {
-    UserModel usuario = userService.realizarLogin(loginData.getEmail(), loginData.getSenha());
+    String token = userService.realizarLogin(loginData.getEmail(), loginData.getSenha());
 
-    if (usuario != null) {
+    if (token != null) {
+
+        // Criamos um mapa simples para enviar como JSON: {"token": "ey..."}
+        Map<String, String> usuario = new HashMap<>();
+        usuario.put("token", token);
+
         return ResponseEntity.ok(usuario);
     } else {
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("E-mail ou senha incorretos.");
