@@ -8,7 +8,6 @@ O objetivo da plataforma é aumentar a ocupação da Arena de Pernambuco, facili
 
 ## **Equipe:**
 A equipe do projeto é composta pelos seguintes membros:
-- **Gabriela Menezes**
 - **Lara Thaylanne**
 - **Nicolas Natario**
 
