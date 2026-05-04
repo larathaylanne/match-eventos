@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -35,28 +36,52 @@ public class EventsService {
     @Autowired
     private UserRepository userRepository; // Para buscar o usuário pelo email/id
 
-    @Transactional
+    @Transactional // Verifique se importou: import org.springframework.transaction.annotation.Transactional;
     public void alternarInteresse(Long eventoId, String emailUsuario) {
-        // 1. Busca o evento e o usuário no banco
         EventsModel evento = eventsRepository.findById(eventoId)
             .orElseThrow(() -> new RuntimeException("Evento não encontrado"));
         
         UserModel usuario = userRepository.findByEmail(emailUsuario)
             .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
 
-        // 2. Lógica de "Toggle" (Alternar)
+        // Lógica correta: mexer no Set (lista), não no int
         if (evento.getParticipantes().contains(usuario)) {
-            // Se já está lá, remove o usuário e diminui 1
             evento.getParticipantes().remove(usuario);
-            evento.setInteressados(evento.getInteressados() - 1);
         } else {
-            // Se não está, adiciona o usuário e aumenta 1
             evento.getParticipantes().add(usuario);
-            evento.setInteressados(evento.getInteressados() + 1);
         }
-
-        // 3. Salva a alteração
+        
+        // Atualiza o contador numérico baseado no tamanho real da lista
+        evento.setInteressados(evento.getParticipantes().size());
         eventsRepository.save(evento);
     }
+    
+   public List<EventsModel> listarPorInteressesDoUsuario(String email) {
+    UserModel usuario = userRepository.findByEmail(email)
+        .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
+
+    Set<String> interesses = usuario.getInteressesCategorias();
+
+    if (interesses == null || interesses.isEmpty()) {
+        return List.of(); // Retorna vazio se não tiver interesses cadastrados
+    }
+
+    return eventsRepository.findByCategoriaIn(interesses);
+}
+
+
+
+    // No EventsService.java
+
+    public List<EventsModel> listarPorCategoria(String categoria) {
+        // Se o usuário não mandar categoria (ou mandar vazio), retorna tudo
+        if (categoria == null || categoria.isEmpty()) {
+            return eventsRepository.findAll();
+        }
+        
+        // Caso contrário, busca pela categoria específica
+        return eventsRepository.findByCategoria(categoria);
+    }
+
     
 }

@@ -2,11 +2,16 @@ package com.example.demo.controller;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,16 +38,38 @@ public class UserController {
     public ResponseEntity<Object> login(@RequestBody UserModel loginData) {
     String token = userService.realizarLogin(loginData.getEmail(), loginData.getSenha());
 
-    if (token != null) {
+        if (token != null) {
 
-        // Criamos um mapa simples para enviar como JSON: {"token": "ey..."}
-        Map<String, String> usuario = new HashMap<>();
-        usuario.put("token", token);
+            // Criamos um mapa simples para enviar como JSON: {"token": "ey..."}
+            Map<String, String> usuario = new HashMap<>();
+            usuario.put("token", token);
 
-        return ResponseEntity.ok(usuario);
-    } else {
-        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("E-mail ou senha incorretos.");
+            return ResponseEntity.ok(usuario);
+        } else {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("E-mail ou senha incorretos.");
+        }
+
     }
-}
+    @GetMapping("/interesses")
+    public ResponseEntity<Set<String>> listarInteresses(Authentication authentication) {
+        Set<String> interesses = userService.listarInteresses(authentication.getName());
+        return ResponseEntity.ok(interesses);
+    }
+
+    @PostMapping("/interesses/{categoria}")
+    public ResponseEntity<UserModel> adicionarInteresse(
+            @PathVariable String categoria,
+            Authentication authentication) {
+        UserModel usuario = userService.adicionarInteresse(authentication.getName(), categoria);
+        return ResponseEntity.ok(usuario);
+    }
+
+    @DeleteMapping("/interesses/{categoria}")
+    public ResponseEntity<UserModel> removerInteresse(
+            @PathVariable String categoria,
+            Authentication authentication) {
+        UserModel usuario = userService.removerInteresse(authentication.getName(), categoria);
+        return ResponseEntity.ok(usuario);
+    }
 }
 

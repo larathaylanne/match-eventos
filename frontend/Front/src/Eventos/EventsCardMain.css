@@ -1,0 +1,29 @@
+.eventGeral{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.eventsGrid{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.eventcard{
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px;
+    width: 350px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    
+}
+.eventcard img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px 8px 0 0;
+}
+.eventcard h2 {
+    font-size: 1.5em;
+    margin: 16px 0 8px;
+}

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.models.EventsModel;
@@ -32,7 +33,7 @@ public class EventsController {
 
     @PostMapping("/{id}/interesse")
     public ResponseEntity<?> Interesse(@PathVariable Long id, Authentication authentication) {
-        // Se o token não foi enviado ou é inválido
+
         if (authentication == null || !authentication.isAuthenticated()) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Você precisa estar logado!");
         }
@@ -43,4 +44,20 @@ public class EventsController {
         return ResponseEntity.ok("Operação realizada com sucesso!");
     }
 
+    @GetMapping("/recomendados")
+    public ResponseEntity<List<EventsModel>> recomendados(Authentication authentication) {
+        if (authentication == null || !authentication.isAuthenticated()) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        }
+
+        List<EventsModel> eventos = eventsService.listarPorInteressesDoUsuario(authentication.getName());
+        return ResponseEntity.ok(eventos);
+    }
+
+    @GetMapping("/filtrar")
+    public ResponseEntity<List<EventsModel>> filtrar(@RequestParam String categoria) {
+        List<EventsModel> listaFiltrada = eventsService.listarPorCategoria(categoria);
+        return ResponseEntity.ok(listaFiltrada);
+    }
+    
 }

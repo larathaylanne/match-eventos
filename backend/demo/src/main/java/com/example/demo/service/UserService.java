@@ -3,6 +3,7 @@ package com.example.demo.service;
 import java.nio.charset.StandardCharsets;
 import java.util.Date;
 import java.util.Optional;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -41,6 +42,8 @@ public class UserService {
        return null;
     }
 
+    
+
     private String gerarToken(UserModel usuario) {
         var key = Keys.hmacShaKeyFor(SECRET_KEY.getBytes(StandardCharsets.UTF_8));
 
@@ -52,5 +55,28 @@ public class UserService {
                 .setExpiration(new Date(System.currentTimeMillis() + 86400000)) // Expira em 1 dia
                 .signWith(key) // Agora passamos apenas a chave preparada
                 .compact();
+    }
+
+    public UserModel adicionarInteresse(String email, String categoria) {
+        UserModel usuario = userRepository.findByEmail(email)
+            .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
+        
+        usuario.getInteressesCategorias().add(categoria);
+        return userRepository.save(usuario);
+    }
+
+    public UserModel removerInteresse(String email, String categoria) {
+        UserModel usuario = userRepository.findByEmail(email)
+            .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
+        
+        usuario.getInteressesCategorias().remove(categoria);
+        return userRepository.save(usuario);
+    }
+
+    public Set<String> listarInteresses(String email) {
+        UserModel usuario = userRepository.findByEmail(email)
+            .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
+        
+        return usuario.getInteressesCategorias();
     }
 }
