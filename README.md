@@ -20,8 +20,8 @@ A equipe do projeto é composta pelos seguintes membros:
 
 ## **Entrega 2:**
 
-**1. Link video no youtube: https://youtu.be/YPX_ueWrQtw?si=XCeZzEWXudEkIavd
+** Link video no youtube: https://youtu.be/YPX_ueWrQtw?si=XCeZzEWXudEkIavd
 
 ## **Entrega 3:**
 
-**1. Link video no youtube: https://youtu.be/YPX_ueWrQtw?si=coQ31NYzvZQQL2a8
+** Link video no youtube: https://youtu.be/YPX_ueWrQtw?si=coQ31NYzvZQQL2a8
