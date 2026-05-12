@@ -1,7 +1,7 @@
 import './Header.css';
-import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import {jwtDecode} from 'jwt-decode';
+import Catalogo from '../Catalogo/Catalogo';
 
 function Header() {
 
@@ -12,7 +12,6 @@ function Header() {
         if (token) {
         try {
             const decoded = jwtDecode(token);
-            // "nome" é o nome que você colocou no .claim("nome", ...) lá no Java
             setUsuarioNome(decoded.nome); 
         } catch (error) {
             console.error("Token inválido");
@@ -31,20 +30,23 @@ function Header() {
         <header>
             <h1>Arena Match</h1>
             <nav className="nav-buttons">
-        {usuarioNome ? (
-          // O que aparece quando está LOGADO
-          <div className="user-info">
-            <span>Olá, <strong>{usuarioNome}</strong></span>
-            <button onClick={handleLogout} className="btn-logout">Sair</button>
-          </div>
-        ) : (
-          // O que aparece quando NÃO está logado
-          <div>
-           <a href="/login"><button>Login</button></a>
-           <a href="/signup"><button>Cadastrar</button></a>
-          </div>
-        )}
-      </nav>
+                <a href="/">Home</a>
+                <a href="/catalogo">Catálogo</a>
+                <div>
+                    {usuarioNome ? (
+                        <div className="user-info">
+                            <span>Olá, <strong>{usuarioNome}</strong></span>
+                            <button onClick={handleLogout} className="btn-logout">Sair</button>
+                        </div>
+                        ) : (
+                        <div>
+                            <a href="/login"><button>Login</button></a>
+                            <a href="/signup"><button>Cadastrar</button></a>
+                        </div>
+                    )}
+                </div>
+                
+            </nav>    
         </header>
     )
 }

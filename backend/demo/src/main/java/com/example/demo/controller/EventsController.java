@@ -31,6 +31,16 @@ public class EventsController {
         return ResponseEntity.ok(eventos);
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<EventsModel> buscarPorId(@PathVariable Long id) {
+        EventsModel evento = eventsService.buscarPorId(id);
+        if (evento == null) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(evento);
+    }
+    
+
     @PostMapping("/{id}/interesse")
     public ResponseEntity<?> Interesse(@PathVariable Long id, Authentication authentication) {
 

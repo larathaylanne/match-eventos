@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import api from '../../services/Api';
+import api from '../../../services/Api';
 
 function LoginForm() {
   const [email, setEmail] = useState('');
@@ -7,6 +7,12 @@ function LoginForm() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+
+    if (!email || !senha) {
+      alert("Preencha todos os campos.");
+      return;
+    }
+    
     try {
       const response = await api.post('/usuarios/login', { email, senha });
       

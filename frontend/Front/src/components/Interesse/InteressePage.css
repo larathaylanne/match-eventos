@@ -1,0 +1,137 @@
+.interesse-page {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  font-family: sans-serif;
+}
+
+.interesse-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.interesse-star-icon {
+  font-size: 2.5rem;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #a855f7, #ec4899);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+}
+
+.interesse-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #a855f7;
+  margin: 0 0 0.5rem;
+}
+
+.interesse-sub {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+}
+
+.interesse-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.interesse-label {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.interesse-badge {
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: #f3e8ff;
+  color: #7c3aed;
+  border: 1px solid #c4b5fd;
+}
+
+.interesse-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 1.5rem;
+}
+
+.interesse-card {
+  border: 1.5px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 1.2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  position: relative;
+  transition: border-color 0.15s, background 0.15s;
+  background: white;
+  user-select: none;
+}
+
+.interesse-card:hover {
+  border-color: #a855f7;
+  background: #faf5ff;
+}
+
+.interesse-card.selecionado {
+  border-color: #a855f7;
+  background: #faf5ff;
+}
+
+.interesse-check {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #a855f7;
+  color: white;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.interesse-emoji {
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+.interesse-nome {
+  font-size: 0.85rem;
+  text-align: center;
+  color: #333;
+}
+
+.interesse-card.selecionado .interesse-nome {
+  color: #7c3aed;
+  font-weight: 500;
+}
+
+.interesse-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+  background: linear-gradient(135deg, #a855f7, #ec4899);
+  transition: opacity 0.15s;
+}
+
+.interesse-btn:hover { opacity: 0.9; }
+.interesse-btn:disabled { opacity: 0.6; cursor: not-allowed; }

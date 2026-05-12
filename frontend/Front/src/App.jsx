@@ -1,11 +1,13 @@
 import './App.css';
-import EventsCardMain from './Eventos/EventsCardMain';
-import Header from './Header/Header';   
+import EventsCarrossel from './components/EventCarrossel/EventsCarrossel';
+import EventsCardMain from './components/Eventos/EventsCardMain';
+import Header from './components/Header/Header';   
 
 function App() {
     return (
         <div>
             <Header />
+            <EventsCarrossel/>
             <EventsCardMain />
         </div>
     )

@@ -1,17 +1,32 @@
 import { useState } from 'react';
-import api from '../../services/Api';
+import api from '../../../services/Api';
 
 function SignupForm() {
   const [formData, setFormData] = useState({ nome: '', email: '', senha: '' });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!formData.nome || !formData.email || !formData.senha) {
+      alert("Preencha todos os campos.");
+      return;
+    }
+    
     try {
-      await api.post('/usuarios/registrar', formData);
-      alert("Usuário cadastrado com sucesso! Agora faça login.");
-      window.location.href = "/";
-    } catch (error) {
-      alert(error.response?.data || "Erro ao cadastrar.");
+        await api.post('/usuarios/registrar', formData);
+        const response = await api.post('/usuarios/login', { email: formData.email, senha: formData.senha });
+        
+        const token = response.data.token;
+        
+        localStorage.setItem('token', token);
+        
+        alert("Bem-vindo à ArenaMatch!");
+        window.location.href = "/interesses";
+    }catch (error) {
+      console.log("Status:", error.response?.status);
+      console.log("Data:", error.response?.data);
+      console.log("Erro completo:", error);
+      alert(error.response?.data?.message || "Erro ao cadastrar.");
     }
   };
 

@@ -1,0 +1,37 @@
+.detalhe-container { max-width: 700px; margin: 0 auto; padding: 2rem 1rem; }
+
+.btn-voltar {
+  background: none; border: 1px solid #ddd;
+  padding: 6px 14px; border-radius: 99px;
+  cursor: pointer; font-size: 14px; margin-bottom: 1.5rem;
+}
+.btn-voltar:hover { background: #f5f5f5; }
+
+.detalhe-card { border: 1px solid #eee; border-radius: 12px; overflow: hidden; background: white; }
+
+.detalhe-img { width: 100%; height: 280px; object-fit: cover; display: block; }
+
+.detalhe-body { padding: 1.5rem; }
+
+.detalhe-badge {
+  font-size: 12px; font-weight: 500;
+  background: #E6F1FB; color: #0C447C;
+  padding: 3px 10px; border-radius: 99px;
+}
+
+.detalhe-titulo { font-size: 1.6rem; font-weight: 500; margin: 0.75rem 0; }
+
+.detalhe-infos { display: flex; flex-direction: column; gap: 4px; margin-bottom: 1rem; }
+.detalhe-infos p { margin: 0; font-size: 14px; color: #555; }
+
+.detalhe-descricao { font-size: 15px; line-height: 1.7; color: #333; margin-bottom: 1.5rem; }
+
+.btn-interesse {
+  padding: 10px 24px; border-radius: 99px;
+  border: 1px solid #ddd; background: white;
+  font-size: 14px; cursor: pointer; transition: all 0.15s;
+}
+.btn-interesse:hover { background: #f5f5f5; }
+.btn-interesse.ativo { background: #E6F1FB; border-color: #185FA5; color: #185FA5; }
+
+.detalhe-loading, .detalhe-erro { text-align: center; padding: 3rem; color: #888; }

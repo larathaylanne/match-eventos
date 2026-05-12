@@ -1,15 +1,15 @@
-import api from "../services/Api"
+import api from "../../services/Api"
 import { useState, useEffect } from "react";
-import './EventsCardMain.css'; // Importe o CSS para estilizar os cards de eventos
+import './Catalogo.css';
+import Header from "../Header/Header";
 
-function EventsCardMain(){
+function Catalogo(){
 
-    const [events, setEvents] = useState([]); // 2. Estado para guardar a lista
-    const [categoria, setCategoria] = useState(""); // Estado do filtro
+    const [events, setEvents] = useState([]);
+    const [categoria, setCategoria] = useState(""); 
 
     const carregarEventos = async (filtro = "") => {
         try {
-            // Se houver categoria, usa a rota de filtrar, senão usa a rota geral
             const rota = filtro ? `/eventos/filtrar?categoria=${filtro}` : "/eventos";
             const response = await api.get(rota);
             setEvents(response.data);
@@ -18,20 +18,19 @@ function EventsCardMain(){
         }
     };
 
-    // Carrega tudo ao abrir a página
     useEffect(() => {
         carregarEventos();
     }, []);
 
-    // Função disparada quando o usuário muda o Select
     const handleFilterChange = (e) => {
         const valor = e.target.value;
         setCategoria(valor);
-        carregarEventos(valor); // Chama a API com a nova categoria
+        carregarEventos(valor);
     };
 
     return (
         <div className="eventGeral">
+            <Header/>
 
             <div className="filter-section">
                 <label>Filtrar por Esporte: </label>
@@ -62,4 +61,4 @@ function EventsCardMain(){
     );
 }
 
-export default EventsCardMain;
+export default Catalogo;

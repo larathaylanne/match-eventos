@@ -13,3 +13,15 @@ header{
 
     box-shadow: 5px 5px 16px rgba(94, 93, 93, 0.75);
 }
+
+.nav-buttons{
+    display: flex;
+    gap: 30px;
+}
+
+a{
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 18px;
+}
