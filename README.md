@@ -25,3 +25,10 @@ A equipe do projeto é composta pelos seguintes membros:
 ## **Entrega 3:**
 
 ** Link video no youtube: https://youtu.be/YPX_ueWrQtw?si=coQ31NYzvZQQL2a8
+
+### **Issues/Bug Tracker**
+<img width="1760" height="702" alt="image" src="https://github.com/user-attachments/assets/10a546ba-c375-43be-a751-31f7b88c2c35" />
+<img width="1760" height="941" alt="image" src="https://github.com/user-attachments/assets/a0f35c11-629b-456d-9bac-a95b1273dab1" />
+
+<img width="1760" height="941" alt="image" src="https://github.com/user-attachments/assets/564b10d4-bdfa-4469-b993-6e3c80f9be28" />
+
