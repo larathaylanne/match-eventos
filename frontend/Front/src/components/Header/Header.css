@@ -5,9 +5,8 @@ header{
     right: 0;
 
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    padding: 5px 30px;
     background-color: #f8f8f8;
     border-bottom: 1px solid #e0e0e0;
 
@@ -17,6 +16,7 @@ header{
 .nav-buttons{
     display: flex;
     gap: 30px;
+    align-items: center;
 }
 
 a{
@@ -24,4 +24,23 @@ a{
     color: #333;
     font-weight: bold;
     font-size: 18px;
+}
+.buttonsUser{
+    display: flex;
+    gap: 15px;
+}
+
+.loginbutton, .signupbutton{
+    padding: 8px 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ab03ee;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover{
+        background-color: #8a02b8;
+    }
 }

@@ -39,9 +39,9 @@ function Header() {
                             <button onClick={handleLogout} className="btn-logout">Sair</button>
                         </div>
                         ) : (
-                        <div>
-                            <a href="/login"><button>Login</button></a>
-                            <a href="/signup"><button>Cadastrar</button></a>
+                        <div className="buttonsUser">
+                            <a href="/login"><button className="loginbutton">Login</button></a>
+                            <a href="/signup"><button className="signupbutton">Cadastrar</button></a>
                         </div>
                     )}
                 </div>

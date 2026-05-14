@@ -1,3 +1,16 @@
+:root{
+    --gradient_main: linear-gradient(320deg, #FF50C8, #A020F0);
+}
+
 body    {
     margin: 0;
+    background:  #FDF2F8;
+    min-height: 100vh;
+}
+*{
+    h1{
+        background: var(--gradient_main);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
 }

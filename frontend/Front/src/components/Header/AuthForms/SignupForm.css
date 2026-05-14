@@ -1,0 +1,168 @@
+
+
+.signup{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    
+    gap: 20px;
+    
+}
+
+form{
+
+    width: 400px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 40px;
+    padding-bottom: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 16px;
+    background-color: #f8f8f8;
+
+    box-shadow: 2px 4px 8px rgba(175, 175, 175, 0.75);
+
+    &:hover{
+        box-shadow: 4px 6px 10px rgba(175, 175, 175, 0.75);
+    }
+}
+.title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    h2{
+        background: var(--gradient_main);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+.Dados{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-container{
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    padding: 5px 8px 5px 10px;
+
+    background-color: #FAF5FF;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+
+    color: #890eb9;
+    input{
+        width: 100%;
+        padding: 8px;
+        border: none;
+        border-radius: 5px;
+        background: none;
+    }
+}
+
+.sparkles{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--gradient_main);
+    color: #ffffff;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.sparkle{
+    width: 2rem;
+    height: 2rem;
+}
+
+.cadastro{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: var(--gradient_main);
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold   ;
+
+    &:hover{
+        filter: brightness(0.8);
+    }
+}
+
+.centro{
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+
+    background-color: #FAF5FF;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+
+    color: #890eb9;
+
+    h3{
+        font-size: 1rem;
+    }
+
+}
+
+.beneficio{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    p{
+        color: black;
+    }
+}
+
+.circleCheck{
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.Voltar{
+    border: none;
+    background: none;
+
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    font-weight: bold;
+    font-size: 0.9rem;
+
+    margin-top: 15px;
+
+    &:hover{
+        background: #FAF5FF;
+    }
+}
+
+.AccountLogin{
+    display: flex;
+    gap: 5px;
+    font-size: 16px;
+    a{
+        font-size: 16px;
+        color: #890eb9;
+    }
+}

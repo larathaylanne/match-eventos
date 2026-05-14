@@ -4,7 +4,7 @@ import './EventsCardMain.css';
 import { useNavigate } from "react-router-dom";
 
 function EventsCardMain(){
-const navigate = useNavigate();
+    const navigate = useNavigate();
     const [events, setEvents] = useState([]);
     const [categoria, setCategoria] = useState("");
 
@@ -30,7 +30,7 @@ const navigate = useNavigate();
 
     return (
         <div className="eventGeral">
-
+            <h2>Eventos Gerais</h2>
             <div className="filter-section">
                 <label>Filtrar por Esporte: </label>
                 <select value={categoria} onChange={handleFilterChange}>
@@ -43,7 +43,7 @@ const navigate = useNavigate();
             </div>
 
             <div className="eventsGrid">
-            {events.slice(0, 10).map(event => (
+            {events.slice(0, 12).map(event => (
             <div
                 key={event.id}
                 className="eventcard"
