@@ -11,19 +11,28 @@
     }
 
     button{
-        padding: 10px 20px;
+        padding: 15px 25px;
         font-size: 1rem;
         border: none;
-        border-radius: 5px;
-        background-color: #ab03ee;
+        border-radius: 12px;
+
+        background: var(--gradient_main);
         color: white;
+        font-weight: bold;
+        
+        
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
         cursor: pointer;
         transition: transform ease 0.3s;
 
         &:hover{
-            background-color: #8a02b8;
+            filter: brightness(0.9);
             transform: translateY(-2px);
         }
+
     }
 }
 
@@ -31,26 +40,50 @@
     display: flex;
     gap: 30px;
 
-    margin-top: 20px;
+    margin-top: 40px;
     div{
         width: 16rem;
-        overflow: hidden;
         border: 1px solid #e0e0e0;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         padding: 1rem;
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
 
         background-color: #ffffff;
 
         transition: transform 0.2s;
 
+        h3{
+            margin-bottom: 0rem;
+
+        }
 
         &:hover{
             transform: translateY(-5px);   
             box-shadow: 2px 8px 16px rgba(0, 0, 0, 0.1);
         }
+        .icons{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: var(--gradient_main);
+            color: #ffffff;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            padding: 10px;
+
+            .icon{
+                width: 2rem;
+                height: 2rem;
+            }
+        }
+
+
     }
 }
 

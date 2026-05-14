@@ -30,7 +30,23 @@ a{
     gap: 15px;
 }
 
-.loginbutton, .signupbutton{
+.loginbutton{
+    padding: 8px 16px;
+    font-size: 16px;
+    border: 1px solid #ab03ee;
+    background: none;
+    border-radius: 5px;
+    color: black;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover{
+        background-color: #8a05be;
+        color: white;
+    }
+
+}
+.signupbutton{
     padding: 8px 16px;
     font-size: 16px;
     border: none;

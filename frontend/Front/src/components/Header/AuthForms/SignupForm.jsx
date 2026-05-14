@@ -106,7 +106,7 @@ function SignupForm() {
             </div>
           </div>
 
-          <button className="cadastro" type="submit">Cadastrar</button>
+          <button className="buttonSubmit" type="submit">Cadastrar</button>
 
           <p className="AccountLogin">Já tem uma conta? <a href="/login">Fazer login</a></p>
           
