@@ -2,6 +2,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import api from "../../services/Api";
 import './EventoDetalhe.css';
+import { Users, Calendar, MapPin, ArrowLeft, Heart } from "lucide-react";
 
 function EventoDetalhe() {
   const { id } = useParams();
@@ -9,6 +10,7 @@ function EventoDetalhe() {
   const [evento, setEvento] = useState(null);
   const [loading, setLoading] = useState(true);
   const [interessado, setInteressado] = useState(false);
+  const isLogged = !!localStorage.getItem("token");
 
   useEffect(() => {
     const buscarEvento = async () => {
@@ -25,6 +27,12 @@ function EventoDetalhe() {
   }, [id]);
 
   const handleInteresse = async () => {
+    if (!isLogged) {
+      alert("Faça login para registrar seu interesse!");
+      navigate("/login");
+      return;
+    }
+    
     try {
       await api.post(`/eventos/${id}/interesse`);
       setInteressado(prev => !prev);
@@ -43,7 +51,7 @@ function EventoDetalhe() {
   return (
     <div className="detalhe-container">
       <button className="btn-voltar" onClick={() => navigate(-1)}>
-        ← Voltar
+        <ArrowLeft /> Voltar
       </button>
 
       <div className="detalhe-card">
@@ -56,18 +64,16 @@ function EventoDetalhe() {
           <h1 className="detalhe-titulo">{evento.titulo}</h1>
 
           <div className="detalhe-infos">
-            <p>📅 {evento.dataEvento}</p>
-            <p>📍 {evento.local}</p>
-            <p>♥ {evento.interessados} interessados</p>
+            <p> <Calendar className="icond" /> {evento.dataEvento}</p>
+            <p> <MapPin className="icond"/> {evento.local}</p>
+            <p> <Users className="icond" /> {evento.interessados} interessados</p>
           </div>
 
+          <h2>Sobre o Evento</h2>
           <p className="detalhe-descricao">{evento.descricao}</p>
 
-          <button
-            className={`btn-interesse ${interessado ? "ativo" : ""}`}
-            onClick={handleInteresse}
-          >
-            {interessado ? "✓ Tenho interesse" : "Tenho interesse"}
+          <button className={`btn-interesse ${interessado ? "ativo" : ""}`} onClick={handleInteresse}>
+            <Heart className="heart-icon" /> {interessado ? "Tenho interesse" : "Tenho interesse"}
           </button>
         </div>
       </div>

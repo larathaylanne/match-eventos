@@ -2,10 +2,13 @@ import './Header.css';
 import { useState, useEffect } from 'react';
 import {jwtDecode} from 'jwt-decode';
 import Catalogo from '../Catalogo/Catalogo';
+import { Bolt } from "lucide-react";
+import { useNavigate } from 'react-router-dom';
 
 function Header() {
 
     const [usuarioNome, setUsuarioNome] = useState(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const token = localStorage.getItem('token');
@@ -32,6 +35,7 @@ function Header() {
             <nav className="nav-buttons">
                 <a href="/">Home</a>
                 <a href="/catalogo">Catálogo</a>
+                <button className="InteressebuttonCaminho" onClick={() => {navigate('/interesses')}}><Bolt /></button>
                 <div>
                     {usuarioNome ? (
                         <div className="user-info">

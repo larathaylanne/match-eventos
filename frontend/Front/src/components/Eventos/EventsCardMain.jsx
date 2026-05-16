@@ -29,6 +29,9 @@ function EventsCardMain(){
         carregarEventos(valor);
     };
 
+    const isLogged = !!localStorage.getItem("token");
+
+
     return (
         <div className="eventGeral">
             <h2>Eventos Gerais</h2>
@@ -44,8 +47,8 @@ function EventsCardMain(){
             </div>
 
             <div className="eventsGrid">
-            {events.slice(0, 12).map(event => (
-            <div key={event.id} className="eventcardmain" onClick={() => navigate(`/eventos/${event.id}`)} >
+            {events.slice(0, 8).map(event => (
+            <div key={event.id} className="eventcardmain" onClick={() => isLogged ? navigate(`/eventos/${event.id}`) : navigate("/login")} >
                 <img src={event.imagemUrl} alt={event.titulo} />
                 <div className="ptBaixo">
                     

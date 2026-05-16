@@ -1,8 +1,17 @@
+.events-carrossel{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .carrossel-content{
     width: 90%;
     margin: 0 auto;
     display: flex;
 
+    justify-content: center;
     overflow: hidden;
 
 }
@@ -10,19 +19,66 @@
 .eventcard{
     border: 1px solid #ccc;
     border-radius: 8px;
-    padding: 16px;
     margin: 16px;
     width: 350px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    background-color: #f5f5f5;
+
+    transition: transform 0.2s;
+    &:hover{
+        transform: translateY(-5px);   
+        box-shadow: 2px 8px 16px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+    }   
+    
     
 }
 .eventcard img {
     width: 100%;
-    height: auto;
+    height: 250px;
     border-radius: 8px 8px 0 0;
 }
 .eventcard h2 {
     font-size: 1.5em;
     margin: 16px 0 8px;
+}
+
+
+.ptBaixo{
+    padding: 16px;
+}
+.ptBaixo p{
+    margin: 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.ptBaixo span{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.calendar{
+    width: 1rem;
+    height: 1rem;
+    margin-right: 8px;
+    color: #890eb9;
+
+    border-radius: 50%;
+    background-color: #eee0fc;
+    padding: 8px;
+
+
+}
+.inteCont{
+    width: 1rem;
+    height: 1rem;
+    margin-right: 8px;
+    color: #890eb9;
+
+    border-radius: 50%;
+    background-color: #eee0fc;
+    padding: 8px;
+    
 }

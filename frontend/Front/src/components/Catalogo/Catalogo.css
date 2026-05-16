@@ -9,7 +9,7 @@
     flex-wrap: wrap;
     justify-content: center;
 }
-.eventcard{
+.eventcardCatalogo{
     border: 1px solid #ccc;
     border-radius: 8px;
     margin: 16px;
@@ -25,12 +25,12 @@
     }   
     
 }
-.eventcard img {
+.eventcardCatalogo img {
     width: 100%;
-    height: auto;
+    height: 200px;
     border-radius: 8px 8px 0 0;
 }
-.eventcard h2 {
+.eventcardCatalogo h2 {
     font-size: 1.5em;
     margin: 16px 0 8px;
 }

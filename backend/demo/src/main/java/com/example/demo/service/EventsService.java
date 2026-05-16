@@ -34,9 +34,9 @@ public class EventsService {
     }
 
     @Autowired
-    private UserRepository userRepository; // Para buscar o usuário pelo email/id
+    private UserRepository userRepository;
 
-    @Transactional // Verifique se importou: import org.springframework.transaction.annotation.Transactional;
+    @Transactional
     public void alternarInteresse(Long eventoId, String emailUsuario) {
         EventsModel evento = eventsRepository.findById(eventoId)
             .orElseThrow(() -> new RuntimeException("Evento não encontrado"));
@@ -44,30 +44,28 @@ public class EventsService {
         UserModel usuario = userRepository.findByEmail(emailUsuario)
             .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
 
-        // Lógica correta: mexer no Set (lista), não no int
         if (evento.getParticipantes().contains(usuario)) {
             evento.getParticipantes().remove(usuario);
         } else {
             evento.getParticipantes().add(usuario);
         }
         
-        // Atualiza o contador numérico baseado no tamanho real da lista
         evento.setInteressados(evento.getParticipantes().size());
         eventsRepository.save(evento);
     }
     
    public List<EventsModel> listarPorInteressesDoUsuario(String email) {
-    UserModel usuario = userRepository.findByEmail(email)
-        .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
+        UserModel usuario = userRepository.findByEmail(email)
+            .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
 
-    Set<String> interesses = usuario.getInteressesCategorias();
+        Set<String> interesses = usuario.getInteressesCategorias();
 
-    if (interesses == null || interesses.isEmpty()) {
-        return List.of(); // Retorna vazio se não tiver interesses cadastrados
+        if (interesses == null || interesses.isEmpty()) {
+            return List.of(); // Retorna vazio se não tiver interesses cadastrados
+        }
+
+        return eventsRepository.findByCategoriaIn(interesses);
     }
-
-    return eventsRepository.findByCategoriaIn(interesses);
-}
 
 
 

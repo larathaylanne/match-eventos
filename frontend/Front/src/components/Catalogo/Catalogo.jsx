@@ -3,11 +3,13 @@ import { useState, useEffect } from "react";
 import './Catalogo.css';
 import Header from "../Header/Header";
 import { useNavigate } from "react-router-dom";
+import { Calendar, Users } from "lucide-react";
 
 function Catalogo(){
     const navigate = useNavigate();
     const [events, setEvents] = useState([]);
-    const [categoria, setCategoria] = useState(""); 
+    const [categoria, setCategoria] = useState("");         
+    const isLogged = !!localStorage.getItem("token");
 
     const carregarEventos = async (filtro = "") => {
         try {
@@ -49,17 +51,18 @@ function Catalogo(){
                 <div className="eventsGrid">
                     {events.length > 0 ? (
                         events.map(event => (
-                             <div
-                key={event.id}
-                className="eventcard"
-                onClick={() => navigate(`/eventos/${event.id}`)} // adiciona isso
-                style={{ cursor: "pointer" }}
-            >
-                <img src={event.imagemUrl} alt={event.titulo} />
-                <h3>{event.titulo}</h3>
-                <p>{event.categoria}</p>
-                <span>Interessados: {event.interessados}</span>
-            </div>
+                            <div key={event.id} className="eventcardCatalogo" onClick={() => isLogged ? navigate(`/eventos/${event.id}`) : navigate("/login")} >
+                        <img src={event.imagemUrl} alt={event.titulo} />
+                        <div className="ptBaixo">
+                            
+                            <h3>{event.titulo}</h3>
+                            <p>{event.categoria}</p>
+                            <p><Calendar className="calendar"/>{event.dataEvento}</p>
+                            <span><Users className="inteCont" />{event.interessados} interessados</span>
+                            <p>{event.descricao}</p>
+                        </div>
+                        
+                    </div>
                         ))
                     ) : (
                         <p>Nenhum evento encontrado para esta categoria.</p>

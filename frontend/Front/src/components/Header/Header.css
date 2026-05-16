@@ -60,3 +60,11 @@ a{
         background-color: #8a02b8;
     }
 }
+
+.InteressebuttonCaminho{
+   display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none ;
+    border: none;
+}

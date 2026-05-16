@@ -51,7 +51,7 @@ function LoginForm() {
               <label htmlFor="email">E-mail</label>
               <div className="input-container">
                 <Mail />
-                <input id="email" type="email" placeholder="E-mail" onChange={e => setFormData({...formData, email: e.target.value})} />
+                <input id="email" type="email" placeholder="E-mail" onChange={e => setEmail(e.target.value)} />
               </div>
             </div>
 
@@ -59,7 +59,7 @@ function LoginForm() {
               <label htmlFor="senha">Senha</label>
               <div className="input-container">
                 <Lock />
-                <input id="senha" type="password" placeholder="Senha" onChange={e => setFormData({...formData, senha: e.target.value})} />
+                <input id="senha" type="password" placeholder="Senha" onChange={e => setSenha(e.target.value)} />
               </div>
             </div>
 
