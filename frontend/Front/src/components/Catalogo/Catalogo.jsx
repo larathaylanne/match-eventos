@@ -43,8 +43,9 @@ function Catalogo(){
                         <option value="">Todos</option>
                         <option value="Esportes">Esportes</option>
                         <option value="Tecnologia">Tecnologia</option>
-                        <option value="Basquete">Basquete</option>
-                        <option value="Vôlei">Vôlei</option>
+                        <option value="Corrida">Corrida</option>
+                        <option value="Eventos Sociais">Eventos Sociais</option>
+                        <option value="Eventos Culturais">Eventos Culturais</option>
                     </select>
                 </div>
 

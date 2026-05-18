@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 import api from "../../services/Api";
 import './InteressePage.css';
+import {Star} from "lucide-react"
 
 const INTERESSES = [
   { id: "Esportes",     emoji: "⚽", nome: "Esportes" },
-  { id: "Tecnologia",       emoji: "🎤", nome: "Tecnologia" },
-  { id: "gastronomia", emoji: "🍔", nome: "Gastronomia" },
-  { id: "geek",        emoji: "🎮", nome: "Eventos Geek" },
+  { id: "Tecnologia",       emoji: "💻", nome: "Tecnologia" },
+  { id: "Eventos Culturais", emoji: "🎭", nome: "Eventos Culturais" },
+  { id: "Eventos Sociais",        emoji: "🎉", nome: "Eventos Sociais" },
   { id: "corridas",    emoji: "🏃", nome: "Corridas" },
-  { id: "basquete",    emoji: "🏀", nome: "Basquete" },
 ];
 
 function InteressePage() {
@@ -70,7 +70,7 @@ function InteressePage() {
     <div className="interesse-page">
 
       <div className="interesse-header">
-        <div className="interesse-star-icon">⭐</div>
+        <div className="interesse-star-icon"><Star /></div>
         <h1 className="interesse-title">Editar Seus Interesses</h1>
         <p className="interesse-sub">
           Atualize os tipos de eventos que você gosta para melhorar suas recomendações

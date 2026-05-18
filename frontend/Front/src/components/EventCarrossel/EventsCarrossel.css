@@ -7,20 +7,41 @@
 }
 
 .carrossel-content{
-    width: 90%;
-    margin: 0 auto;
-    display: flex;
-
-    justify-content: center;
-    overflow: hidden;
+     width: calc(382px * 4); /* cardW * visible */
+  margin: 0 auto;
+  overflow: hidden;
 
 }
 
+.carrossel-track {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+.nav-carrossel {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.nav-carrossel button {
+  background: none;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
 .eventcard{
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    margin: 16px;
-    width: 350px;
+      border: 1px solid #ccc;
+  border-radius: 8px;
+  margin: 16px;
+  min-width: 350px;  /* troque width por min-width */
+  width: 350px;
+  flex-shrink: 0; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     background-color: #f5f5f5;

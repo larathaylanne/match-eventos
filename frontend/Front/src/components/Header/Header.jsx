@@ -6,7 +6,7 @@ import { Bolt } from "lucide-react";
 import { useNavigate } from 'react-router-dom';
 
 function Header() {
-
+    const isLoggedin = !!localStorage.getItem('token');
     const [usuarioNome, setUsuarioNome] = useState(null);
     const navigate = useNavigate();
 
@@ -35,7 +35,9 @@ function Header() {
             <nav className="nav-buttons">
                 <a href="/">Home</a>
                 <a href="/catalogo">Catálogo</a>
-                <button className="InteressebuttonCaminho" onClick={() => {navigate('/interesses')}}><Bolt /></button>
+                {isLoggedin && (
+                    <button className="InteressebuttonCaminho" onClick={() => {navigate('/interesses')}}><Bolt /></button>
+                )}
                 <div>
                     {usuarioNome ? (
                         <div className="user-info">
