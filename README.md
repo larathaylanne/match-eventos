@@ -36,10 +36,5 @@ A equipe do projeto é composta pelos seguintes membros:
 # Entrega 4
 
 ## Histórias implementadas
-- História X
-- História Y
-
-## Funcionalidades adicionadas
-- Cadastro de interesse em evento
-- Sistema de recomendação
-- Confirmação de presença
+- Favoritar/Salvar evento
+- Filtrar eventos por categoria/interesse
