@@ -40,13 +40,18 @@ Entrega 4
 
 **User Story** 
 Como usuário, quero salvar eventos nos meus favoritos para encontrá-los facilmente depois. 
-**Critérios de aceitação** **Cenário: Favoritar evento** 
+
+**Critérios de aceitação** 
+**Cenário: Favoritar evento** 
 Dado que estou logado E estou visualizando um evento Quando clico em "Favoritar" Então o evento deve ser salvo nos meus favoritos 
+
 **Cenário: Visualizar favoritos** 
 Dado que possuo eventos favoritos Quando acesso a tela "Meus Favoritos" Então devo visualizar os eventos salvos 
 
 --- 
-### Filtrar eventos por categoria **User Story** Como usuário, quero filtrar eventos por categoria para encontrar eventos do meu interesse. 
+### Filtrar eventos por categoria 
+**User Story** 
+Como usuário, quero filtrar eventos por categoria para encontrar eventos do meu interesse. 
 
 **Critérios de aceitação** 
 
