@@ -33,8 +33,23 @@ A equipe do projeto é composta pelos seguintes membros:
 <img width="1760" height="941" alt="image" src="https://github.com/user-attachments/assets/564b10d4-bdfa-4469-b993-6e3c80f9be28" />
 
 
-# Entrega 4
+Entrega 4 
+## Histórias implementadas 
 
-## Histórias implementadas
-- Favoritar/Salvar evento
-- Filtrar eventos por categoria/interesse
+### Favoritar eventos 
+
+**User Story** 
+Como usuário, quero salvar eventos nos meus favoritos para encontrá-los facilmente depois. 
+**Critérios de aceitação** **Cenário: Favoritar evento** 
+Dado que estou logado E estou visualizando um evento Quando clico em "Favoritar" Então o evento deve ser salvo nos meus favoritos 
+**Cenário: Visualizar favoritos** 
+Dado que possuo eventos favoritos Quando acesso a tela "Meus Favoritos" Então devo visualizar os eventos salvos 
+
+--- 
+### Filtrar eventos por categoria **User Story** Como usuário, quero filtrar eventos por categoria para encontrar eventos do meu interesse. 
+
+**Critérios de aceitação** 
+
+**Cenário: Filtrar eventos** Dado que existem eventos cadastrados Quando seleciono a categoria "Show" Então devo visualizar apenas eventos daquela categoria 
+
+**Cenário: Nenhum evento encontrado** Dado que não existem eventos da categoria escolhida Quando aplico o filtro Então devo visualizar uma mensagem informando isso
