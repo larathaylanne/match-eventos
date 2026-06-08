@@ -32,3 +32,14 @@ A equipe do projeto é composta pelos seguintes membros:
 
 <img width="1760" height="941" alt="image" src="https://github.com/user-attachments/assets/564b10d4-bdfa-4469-b993-6e3c80f9be28" />
 
+
+# Entrega 4
+
+## Histórias implementadas
+- História X
+- História Y
+
+## Funcionalidades adicionadas
+- Cadastro de interesse em evento
+- Sistema de recomendação
+- Confirmação de presença
