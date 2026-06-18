@@ -40,7 +40,6 @@ public class UserController {
 
         if (token != null) {
 
-            // Criamos um mapa simples para enviar como JSON: {"token": "ey..."}
             Map<String, String> usuario = new HashMap<>();
             usuario.put("token", token);
 

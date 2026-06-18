@@ -61,23 +61,17 @@ public class EventsService {
         Set<String> interesses = usuario.getInteressesCategorias();
 
         if (interesses == null || interesses.isEmpty()) {
-            return List.of(); // Retorna vazio se não tiver interesses cadastrados
+            return List.of();
         }
 
         return eventsRepository.findByCategoriaIn(interesses);
     }
 
-
-
-    // No EventsService.java
-
     public List<EventsModel> listarPorCategoria(String categoria) {
-        // Se o usuário não mandar categoria (ou mandar vazio), retorna tudo
         if (categoria == null || categoria.isEmpty()) {
             return eventsRepository.findAll();
         }
         
-        // Caso contrário, busca pela categoria específica
         return eventsRepository.findByCategoria(categoria);
     }
 

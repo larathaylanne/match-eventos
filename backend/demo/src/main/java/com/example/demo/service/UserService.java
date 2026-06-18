@@ -48,12 +48,12 @@ public class UserService {
         var key = Keys.hmacShaKeyFor(SECRET_KEY.getBytes(StandardCharsets.UTF_8));
 
         return Jwts.builder()
-                .setSubject(usuario.getEmail()) // Identidade do dono do token
-                .claim("id", usuario.getId())   // Dados extras (payload)
+                .setSubject(usuario.getEmail())
+                .claim("id", usuario.getId())  
                 .claim("nome", usuario.getNome())
-                .setIssuedAt(new Date())        // Data de criação
-                .setExpiration(new Date(System.currentTimeMillis() + 86400000)) // Expira em 1 dia
-                .signWith(key) // Agora passamos apenas a chave preparada
+                .setIssuedAt(new Date())
+                .setExpiration(new Date(System.currentTimeMillis() + 86400000))
+                .signWith(key) 
                 .compact();
     }
 

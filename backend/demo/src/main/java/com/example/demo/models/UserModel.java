@@ -22,7 +22,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 
 @Entity
-public class UserModel implements UserDetails { // Adicionamos o implements aqui
+public class UserModel implements UserDetails { 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -58,12 +58,10 @@ public class UserModel implements UserDetails { // Adicionamos o implements aqui
     }
 
 
-    // --- MÉTODOS OBRIGATÓRIOS DO USERDETAILS (Para o SecurityFilter funcionar) ---
 
     @Override
     @JsonIgnore
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        // Isso define que qualquer usuário logado tem a regra básica de "USER"
         return List.of(new SimpleGrantedAuthority("ROLE_USER"));
     }
 
